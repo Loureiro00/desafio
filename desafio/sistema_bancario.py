@@ -1,9 +1,17 @@
+nome= input("Qual o seu nome ? ")
+agencia = input("Digite o numero da sua Agencia")
+conta = input("Digite o numero da sua Conta Corrente")
+print(f"Olá, seja bem vindo(a) Sr(a) {nome}, o que deseja fazer hj ?")
+print(f"Agencia:{agencia}")
+print(f"Conta:{conta}")
+
 menu = """
 
-[d] Depositar 
-[s] Sacar
-[e] Extrato
-[q] Sair
+
+[1] Depositar 
+[2] Sacar
+[3] Extrato
+[0] Sair
 
 => """
 
@@ -17,17 +25,18 @@ while True:
 
     opcao = input(menu)
 
-    if opcao == "d":
+    if opcao == "1":
         valor = float(input("Informe o valor do depósito: "))
 
         if valor > 0:
            saldo += valor
            extrato += f"Depósito: R$ {valor:.2f}\n"
+           print(f"O valor de R$: {valor} foi depositado na conta:{conta}, agencia{agencia}, com o nome do titular : {nome}")
 
         else :
           print("Operaçaõ falhou! O valor informado é invalido")  
 
-    elif opcao == "s":
+    elif opcao == "2":
         valor = float(input("informe o valro do saque :"))
 
         excedeu_saldo = valor > saldo
@@ -53,14 +62,17 @@ while True:
         else :
            print("Operação falhou! O valor informado é invalido.")
 
-    elif opcao == "e":
+    elif opcao == "3":
 
      print("EXTRATO".center(60,"="))
      print("Não foram realizadas movimentações." if not extrato else extrato)
+     print(f"\nTitular da conta : {nome}")
+     print(f"\nConta: {conta}")
+     print(f"\nAgencia: {agencia}")
      print(f"\nSaldo: R$ {saldo:.2f}")
      print("".center(60,"="))
       
-    elif opcao == "q":
+    elif opcao == "0":
        print(" Obrigado por utilizar nosso sistema!")
        break
 
