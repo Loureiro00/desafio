@@ -1,9 +1,14 @@
 nome= input("Qual o seu nome ? ")
-agencia = input("Digite o numero da sua Agencia")
-conta = input("Digite o numero da sua Conta Corrente")
-print(f"Olá, seja bem vindo(a) Sr(a) {nome}, o que deseja fazer hj ?")
-print(f"Agencia:{agencia}")
-print(f"Conta:{conta}")
+print("\n")
+agencia = input("Digite o numero da sua Agencia : ")
+print("\n")
+conta = input("Digite o numero da sua Conta Corrente : ")
+print("\n")
+
+print(f"Olá Sr(a) {nome},")
+print(f"Agencia:{agencia},")
+print(f"Conta:{conta},")
+print("o que deseja fazer hoje ?")
 
 menu = """
 
@@ -31,7 +36,7 @@ while True:
         if valor > 0:
            saldo += valor
            extrato += f"Depósito: R$ {valor:.2f}\n"
-           print(f"O valor de R$: {valor} foi depositado na conta:{conta}, agencia{agencia}, com o nome do titular : {nome}")
+           print(f"O valor de R$: {valor} foi depositado na conta:{conta}, agencia{agencia}.")
 
         else :
           print("Operaçaõ falhou! O valor informado é invalido")  
@@ -65,10 +70,12 @@ while True:
     elif opcao == "3":
 
      print("EXTRATO".center(60,"="))
-     print("Não foram realizadas movimentações." if not extrato else extrato)
      print(f"\nTitular da conta : {nome}")
      print(f"\nConta: {conta}")
      print(f"\nAgencia: {agencia}")
+     print("MOVIMENTAÇÕES".center(60,"="))
+     print("Não foram realizadas movimentações." if not extrato else extrato)
+     print("SALDO".center(60,"="))
      print(f"\nSaldo: R$ {saldo:.2f}")
      print("".center(60,"="))
       
